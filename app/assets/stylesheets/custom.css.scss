@@ -1,2 +1,29 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
+
+body, html{
+    height:100%;
+}
+
+.navbar, .jumbotron{
+    border-radius: 0;
+}
+
+.jumbotron{
+    background: asset-url('paris.jpg') center;
+    background-size: cover;
+    height: 500px;
+}
+
+.heading-row{
+    margin-top: 150px;
+}
+
+.btn-link{
+    color:#007BFF;
+}
+
+.btn-link:hover {
+    color:white;
+    text-decoration: none;
+}
+
