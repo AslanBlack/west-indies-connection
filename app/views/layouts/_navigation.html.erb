@@ -1,6 +1,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">97Connection</a>
+  <!--a class="navbar-brand" href="#">97Connection</a-->
+  <%= link_to "97Connection", root_path, class:"navbar navbar-brand"%>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -29,13 +30,19 @@
       </li>
     </ul>
     <ul class="navbar-nav navbar-right">
-        <li nav-item>
-        <%= link_to "Connexion", root_path, class:"btn btn-link" %>
+      
+      <% if user_signed_in? %>
+      <li nav-item>
+        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class:"btn btn-outline-danger" %>
+      </li>
+      <% else %>
+      <li nav-item>
+        <%= link_to "Connexion", new_user_session_path, class:"btn btn-link" %>
       </li>
       <li nav-item>
-        <%= link_to "Inscription", root_path, class:"btn btn-outline-primary" %>
+        <%= link_to "Inscription", new_user_registration_path, class:"btn btn-outline-primary" %>
       </li>
-      
+      <% end %>
     </ul>
     
     
